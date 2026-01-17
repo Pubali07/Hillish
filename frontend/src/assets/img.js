@@ -3,7 +3,7 @@ import search from "./search.png";
 import basket_icon from "./basket_icon.png";
 import shopping_cart from "./shopping-cart.png";
 import rating from "./rating_starts.png";
-import Header from "./header_img.png";
+import Header from "./header_img_optimized.png";
 import add_icon_white from "./add_icon_white.png";
 import remove_icon from "./remove_icon_red.png";
 import add_icon_green from "./add_icon_green.png";
