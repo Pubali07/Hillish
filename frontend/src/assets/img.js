@@ -3,7 +3,8 @@ import search from "./search.png";
 import basket_icon from "./basket_icon.png";
 import shopping_cart from "./shopping-cart.png";
 import rating from "./rating_starts.png";
-import Header from "./header_img_optimized_.png";
+import header_img from "./header_img_optimized_.png";
+import header_img_webp from "./header_img_optimized_.webp";
 import add_icon_white from "./add_icon_white.png";
 import remove_icon from "./remove_icon_red.png";
 import add_icon_green from "./add_icon_green.png";
@@ -118,7 +119,8 @@ export const assets = {
   search,
   basket_icon,
   shopping_cart,
-  Header,
+  header_img,
+  header_img_webp,
   rating,
   add_icon_white,
   remove_icon,
