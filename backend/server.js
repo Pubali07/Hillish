@@ -1,28 +1,48 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
+import paymentRouter from "./routes/paymentRoute.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
+const app = express();
+const port = process.env.PORT || 5000;
 
+// Middleware
+app.use(express.json());
 
-// app config
-const app = express()
-const port = 4000
+// 🔥 CORS Config
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:5174"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+app.use("/uploads", express.static("uploads"));
 
-//middleware
-app.use(express.json())
-app.use(cors())
-
-//db connection
+// Connect to DB
 connectDB();
-//api endpoints
-app.use("/api/food",foodRouter)
 
-app.get("/",(req,res)=>{
-    res.send("API working")
-})
+// Test route
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend is working" });
+});
 
-app.listen(port,()=>{
-    console.log(`Server Started on http://localhost:${port}`)
-})
-//mongodb+srv://pubali803:12345@cluster0.oatx1.mongodb.net/?
+// API routes
+app.use("/api/food", foodRouter);
+app.use("/api/payment", paymentRouter);
+app.use("/api/order", orderRoutes);
+
+// Root route
+app.get("/", (req, res) => {
+  res.send("API working");
+});
+
+// Start server
+app.listen(port, () => {
+  console.log(`Server started on http://localhost:${port}`);
+});

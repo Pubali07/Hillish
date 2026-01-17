@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
 
 export const connectDB = async () => {
-    await mongoose.connect('mongodb+srv://pubali803:12345@cluster0.oatx1.mongodb.net/Food del').then(()=>console.log("DB connected"));
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("DB connected");
+  } catch (error) {
+    console.log("DB connection error:", error.message);
+  }
 }
