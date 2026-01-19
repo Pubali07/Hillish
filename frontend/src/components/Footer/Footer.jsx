@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-content-left">
           <img src={assets.logo}  alt="" className="footer-logo" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto aliquam placeat eum sint voluptates et, optio aliquid facere explicabo cum sequi ullam vero!</p>
+          <p>Celebrating indigenous food, culture, and community with Hillish</p>
         <div className="footer-social-icons">
           <img src={assets.linkedin_icon} alt="" />
           <img src={assets.twitter} alt="" />
@@ -27,12 +27,12 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+1-212-456-7890</li>
-            <li>contact@runofresh.com</li>
+            <li>contact@Hillish.com</li>
           </ul>
         </div>
       </div>
       <hr />
-      <p className="footer-copyright">Copyright 2024@Tomato.com - All rights reserved</p>
+      <p className="footer-copyright">Copyright 2026@Hillish.com - All rights reserved</p>
     </div>
   );
 };
